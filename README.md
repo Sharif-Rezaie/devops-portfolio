@@ -24,7 +24,7 @@ Almost all codes are copied from this github repo:[saurabhkr952](https://github.
 
 This website is Designed/Created by [Adrian Hajdin](https://github.com/adrianhajdin).
 
-<img src="https://github.com/Saurabhkr952/dev-portfolio/assets/32189783/9b840485-5588-4e4d-92e5-742801a5a149" alt="dev-portfolio website" width="800" height="480" />
+<img src="https://github.com/Sharif-Rezaie/devops-portfolio/assets/32189783/9b840485-5588-4e4d-92e5-742801a5a149" alt="dev-portfolio website" width="800" height="480" />
 
 ## Tech Stack
 
@@ -48,7 +48,7 @@ This selection of tools and technologies collectively highlights a modern approa
 
 ## Setup Overview
 
-https://github.com/Saurabhkr952/dev-portfolio/assets/32189783/95757ba9-be4e-4d4b-9fc1-7b48009a9819
+https://github.com/Sharif-Rezaie/devops-portfolio/assets/32189783/95757ba9-be4e-4d4b-9fc1-7b48009a9819
 
 ## Prerequisites
 
@@ -64,7 +64,7 @@ Before you begin, ensure you have the following:
 
 ### Provision AWS EKS Cluster
 
-1. Clone the project repository: `git clone https://github.com/Saurabhkr952/dev-portfolio.git`
+1. Clone the project repository: `git clone https://github.com/Sharif-Rezaie/devops-portfolio.git`
 2. Navigate to the `terraform` directory: `cd dev-portfolio/terraform`
 3. Modify the Terraform configuration files to match your environment.
 4. Run `terraform init` and `terraform apply` to provision the **EKS cluster**.
@@ -76,7 +76,7 @@ To set up the workflow, follow these steps and modify the appropriate lines in t
 1. **Build and Push Docker Image Job:**
    Navigate to the `build` job section and make the following changes:
 
-   - **Line 17:** Replace `saurabhkr952/dev-portfolio` with your desired image name.
+   - **Line 17:** Replace `Sharif-Rezaie/devops-portfolio` with your desired image name.
 
 2. **Container Vulnerability Check Job:**
    Navigate to the `scan_upload` job section and make the following change:
@@ -86,13 +86,13 @@ To set up the workflow, follow these steps and modify the appropriate lines in t
 3. **Update Manifest Job:**
    Navigate to the `update_manifest` job section and make the following changes:
 
-   - **Line 62:** Replace `saurabhkr952/dev-portfolio-manifest` with your manifest repository name.
-   - **Line 42:** Replace `saurabhkr952/dev-portfolio` with the appropriate image reference.
+   - **Line 62:** Replace `Sharif-Rezaie/devops-portfolio-manifest` with your manifest repository name.
+   - **Line 42:** Replace `Sharif-Rezaie/devops-portfolio` with the appropriate image reference.
    - **Line 67:** Replace `saurabhkr952@gmail.com` with your GitHub Gmail.
    - **Line 68:** Replace `saurabhkr952` with your GitHub username.
-   - **Line 70:** Replace `saurabhkr952/dev-portfolio` with your docker image at both place.
+   - **Line 70:** Replace `Sharif-Rezaie/devops-portfolio` with your docker image at both place.
      & also replace `deployment.yaml` with filename.yaml with path.
-   - **Line 77:** Replace `saurabhkr952/dev-portfolio-manifest` with your manifest repository. name.
+   - **Line 77:** Replace `Sharif-Rezaie/devops-portfolio-manifest` with your manifest repository. name.
 
 4. **Slack Workflow Status Job:**
    Navigate to the `slack-workflow-status` job section and make the following changes:
@@ -126,11 +126,11 @@ Here's how the CI/CD pipeline works:
 5. Following the vulnerability scan, the workflow updates the Kubernetes manifests in the Git repository with the new image tag.
 6. **Argo CD** continuously monitors the Git repository and updates the application version in the Kubernetes cluster.
 7. Security vulnerabilities are reported and can be reviewed in the security tab.
-   ![Security Vulnerabilities](https://github.com/Saurabhkr952/dev-portfolio/assets/32189783/f0ce9f6d-ae90-48ef-9fad-82b3ef3e0e5e.png)
+   ![Security Vulnerabilities](https://github.com/Sharif-Rezaie/devops-portfolio/assets/32189783/f0ce9f6d-ae90-48ef-9fad-82b3ef3e0e5e.png)
 8. After the workflow is successfully completed, the status is reflected as shown below:
-   ![cicd pipeline status](https://github.com/Saurabhkr952/dev-portfolio/assets/32189783/1634442e-2d86-4593-8e03-ad0e1614a6af)
+   ![cicd pipeline status](https://github.com/Sharif-Rezaie/devops-portfolio/assets/32189783/1634442e-2d86-4593-8e03-ad0e1614a6af)
 9. Notifications are sent to **Slack** to provide information about the workflow status.
-   ![Workflow Status](https://github.com/Saurabhkr952/dev-portfolio/assets/32189783/d4b5490c-b4d9-4607-a999-d371c7c0afc5.png)
+   ![Workflow Status](https://github.com/Sharif-Rezaie/devops-portfolio/assets/32189783/d4b5490c-b4d9-4607-a999-d371c7c0afc5.png)
 
 ## Monitoring and Visualization
 
@@ -146,9 +146,9 @@ Here's a preview of a Grafana dashboard monitoring the Kubernetes cluster:
 
 Kubecost is used for Kubernetes cost allocation and resource management.
 
-![Cost Management](https://github.com/Saurabhkr952/dev-portfolio/assets/32189783/0c25b53e-5c65-464f-834d-07654543a635)
+![Cost Management](https://github.com/Sharif-Rezaie/devops-portfolio/assets/32189783/0c25b53e-5c65-464f-834d-07654543a635)
 
-## Kubernetes Manifest Repository: [dev-portfolio-manifest](https://github.com/Saurabhkr952/dev-portfolio-manifest)
+## Kubernetes Manifest Repository: [dev-portfolio-manifest](https://github.com/Sharif-Rezaie/devops-portfolio-manifest)
 
 ## Work in Progress
 
