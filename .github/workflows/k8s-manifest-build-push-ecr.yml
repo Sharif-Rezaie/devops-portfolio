@@ -65,7 +65,7 @@ jobs:
           git config --local user.email "sharifrezaie@gmail.com"  
           git config --local user.name "Sharif-Rezaie"
           echo ${{ github.sha }}
-          sed -i 's+${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ github.event.repository.name }}:.*+${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/devops-portfolio-k8s-manifest:${{ github.sha }}+g' deploy_acr.yaml
+          sed -i 's+${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/devops-portfolio:.*+${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/devops-portfolio:${{ github.sha }}+g' deploy_acr.yaml
           git add -A
           git commit -m "update image tag for - ${{ github.sha }}"
       - run: echo ${{ github }}
