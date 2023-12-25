@@ -76,7 +76,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHIB_TOKEN }}
-          repository: ${{ github.actor }}/devops-portfolio
+          repository: ${{ github.actor }}/devops-portfolio-k8s-manifest
           force: true
 
   slack-workflow-status: #  send the status of the workflow that it is success,failed or cancelled
