@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           push: true
           tags: ${{ env.DOCKERHUB_USERNAME }}/dev-portfolio:${{ github.sha }}
@@ -61,7 +61,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.repository.name }}/devops-portfolio
+          repository: ${{ github.actor}}/devops-portfolio
           ref: "main"
           token: ${{ secrets.GITHIB_TOKEN }}
       - name: setup git config
@@ -76,7 +76,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHIB_TOKEN }}
-          repository: ${{ github.event.repository.name }}/devops-portfolio
+          repository: ${{ github.actor }}/devops-portfolio
           force: true
 
   slack-workflow-status: #  send the status of the workflow that it is success,failed or cancelled
