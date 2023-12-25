@@ -57,7 +57,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: ${{ github.actor}}/devops-portfolio
+          repository: ${{ github.actor}}/devops-portfolio-k8s-manifest
           ref: "main"
           token: ${{ secrets.GITHIB_TOKEN }} # Github Personal Access Token
       - name: setup git config
@@ -65,7 +65,7 @@ jobs:
           git config --local user.email "sharifrezaie@gmail.com"  
           git config --local user.name "Sharif-Rezaie"
           echo ${{ github.sha }}
-          sed -i 's+110830/devops-portfolio:.*+110830/devops-portfolio:${{ github.sha }}+g' deployment.yaml                          
+          sed -i 's+${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ github.event.repository.name }}:.*+${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ github.event.repository.name }}:${{ github.sha }}+g' deploy_acr.yaml
           git add -A
           git commit -m "update image tag for - ${{ github.sha }}"
       - run: echo ${{ github }}
