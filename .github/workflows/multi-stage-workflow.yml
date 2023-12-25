@@ -61,7 +61,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.actor}}/devops-portfolio
+          repository: ${{ github.actor}}/devops-portfolio-k8s-manifest
           ref: "main"
           token: ${{ secrets.GITHIB_TOKEN }}
       - name: setup git config
