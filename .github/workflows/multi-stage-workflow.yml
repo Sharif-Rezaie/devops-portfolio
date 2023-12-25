@@ -29,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.DOCKERHUB_USERNAME }}/dev-portfolio:${{ github.sha }}
+          tags: ${{ env.DOCKERHUB_USERNAME }}/devops-portfolio:${{ github.sha }}
 
   scan_upload: #This job checks the vulnerability of the Container Vulnerability Check & Upload it.
     name: Container Vulnerability Check
