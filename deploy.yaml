@@ -1,1 +1,24 @@
-docker value
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-portfolio
+  labels:
+    app: dev-portfolio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dev-portfolio
+  template:
+    metadata:
+      labels:
+        app: dev-portfolio
+    spec:
+      imagePullSecrets:
+      - name: regsecret
+      containers:
+      - name: dev-portfolio
+        image: 110830/devops-portfolio:50876bd256ad087b99eac0aaab36352774b14d49
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
