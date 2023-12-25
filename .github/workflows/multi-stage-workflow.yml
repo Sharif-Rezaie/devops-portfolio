@@ -69,7 +69,7 @@ jobs:
           git config --local user.email "sharifrezaie@gmail.com"  
           git config --local user.name "Sharif-Rezaie"
           echo ${{ github.sha }}
-          sed -i 's+110830/devops-portfolio:.*+110830/devops-portfolio:${{ github.sha }}+g' deployment.yaml                          
+          sed -i 's+110830/devops-portfolio:.*+110830/devops-portfolio:${{ github.sha }}+g' deploy.yaml
           git add -A
           git commit -m "update image tag for - ${{ github.sha }}"
       - name: Push changes
