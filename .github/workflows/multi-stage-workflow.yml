@@ -84,7 +84,7 @@ jobs:
     name: Post Workflow Status To Slack
     needs:
       - build
-      - scan_upload
+      #- scan_upload
       - update_manifest
     runs-on: ubuntu-latest
     permissions:
