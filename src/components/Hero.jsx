@@ -19,8 +19,8 @@ const Hero = () => {
             Hi, I'm <span className='text-[#915EFF]'>Sharif</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I provisioned infrastrastructure in AWS, using IaC Terraform <br className='sm:block hidden' />
-            for many customers.
+            I provision infrastrastructure in AWS, using IaC Terraform <br className='sm:block hidden' />
+            for my customers.
           </p>
         </div>
       </div>
